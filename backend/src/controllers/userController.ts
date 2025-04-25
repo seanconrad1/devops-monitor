@@ -5,13 +5,24 @@ import prisma from "../prisma";
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const { email, password } = req.body;
-    const newUser = await prisma.user.create({
-      data: {
-        email,
-        password,
-      },
+    const { email, uid, displayName, photoURL, providerId } = req.body;
+
+    const existingUser = await prisma.user.findUnique({
+      where: { email: email },
     });
+
+    let newUser;
+    if (!existingUser) {
+      newUser = await prisma.user.create({
+        data: {
+          email,
+          uid,
+          displayName,
+          photoURL,
+          providerId,
+        },
+      });
+    }
 
     res.status(201).json(newUser);
   } catch (error) {
