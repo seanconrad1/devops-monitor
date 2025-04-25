@@ -13,7 +13,8 @@
     "start": "npm run start --workspaces",
     "dev": "concurrently \"npm run dev --workspace frontend\" \"npm run dev --workspace backend\"",
     "build-prod": "docker compose -f docker-compose.yml up --build",
-    "mongo-shell": "docker exec -it mongo-db mongosh"
+    "mongo-shell": "docker exec -it mongo-db mongosh",
+    "sync-prisma": "docker exec -it cloudops-backend npx prisma db push"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",
