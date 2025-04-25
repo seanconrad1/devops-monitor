@@ -1,0 +1,23 @@
+{
+  "name": "cloudops-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "start": "npm run start --workspaces",
+    "dev": "concurrently \"npm run dev --workspace frontend\" \"npm run dev --workspace backend\"",
+    "build-prod": "docker compose -f docker-compose.yml up --build",
+    "mongo-shell": "docker exec -it mongo-db mongosh"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "eslint": "^9.25.1",
+    "concurrently": "^8.0.1"
+  }
+}
