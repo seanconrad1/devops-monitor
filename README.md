@@ -5,58 +5,66 @@ DevOps Monitoring & Automation Dashboard — a SaaS platform that integrates wit
 This project simulates real-world DevOps tooling with an internal dashboard.
 
 🚀 Key Features:
+
 👩‍💻 Frontend (React + Next.js + TypeScript)
-Authenticated dashboard using NextAuth or custom JWT
 
-Cluster overview page (nodes, pods, deployments)
+- Authenticated dashboard using NextAuth or custom JWT
 
-Log viewer with filters (powered by Splunk data)
+- Cluster overview page (nodes, pods, deployments)
 
-Trigger buttons for pipeline runs (e.g., Argo CD sync)
+- Log viewer with filters (powered by Splunk data)
 
-Health widgets (Dynatrace metrics, API status)
+- Trigger buttons for pipeline runs (e.g., Argo CD sync)
 
-CI/CD history viewer (via GitHub Actions logs)
+- Health widgets (Dynatrace metrics, API status)
 
-⚙️ Backend (Node.js + Express + TypeScript)
-RESTful APIs to fetch logs, metrics, and cloud resources
+- CI/CD history viewer (via GitHub Actions logs)
 
-Webhooks from GitHub Actions, Argo CD
+⚙️ Backend
 
-Auth layer for protecting APIs
+- (Node.js + Express + TypeScript)
+- RESTful APIs to fetch logs, metrics, and cloud resources
 
-Integrate AWS SDK (EKS, Lambda, etc.)
+- Webhooks from GitHub Actions, Argo CD
+
+- Auth layer for protecting APIs
+
+- Integrate AWS SDK (EKS, Lambda, etc.)
 
 🗃️ Database
-PostgreSQL (via Prisma ORM)
 
-Stores metadata: users, clusters, pipelines, logs cache
+- PostgreSQL (via Prisma ORM)
+
+- Stores metadata: users, clusters, pipelines, logs cache
 
 🧪 Testing
-Jest for unit testing
 
-Mocha + Chai for integration and API testing
+- Jest for unit testing
+
+- Mocha + Chai for integration and API testing
 
 ☁️ Cloud & Infra
-AWS: Host backend APIs on Lambda, use API Gateway
 
-Use EKS to deploy microservices, autoscale with ELB
+- AWS: Host backend APIs on Lambda, use API Gateway
 
-Use Terraform + CloudFormation for IaC
+- Use EKS to deploy microservices, autoscale with ELB
 
-Helm for managing EKS deployments
+- Use Terraform + CloudFormation for IaC
 
-Docker for containerizing the backend
+- Helm for managing EKS deployments
 
-Argo CD for GitOps-style deployment syncing
+- Docker for containerizing the backend
 
-GitHub Actions for CI/CD pipeline
+- Argo CD for GitOps-style deployment syncing
 
-Splunk + Dynatrace for logging and performance monitoring
+- GitHub Actions for CI/CD pipeline
+
+- Splunk + Dynatrace for logging and performance monitoring
 
 🧩 Optional Stretch Goals
-ChatOps bot (e.g., Slack integration to trigger builds)
 
-CLI tool (written in Node.js) to interact with the platform
+- ChatOps bot (e.g., Slack integration to trigger builds)
 
-RBAC with scoped cluster access
+- CLI tool (written in Node.js) to interact with the platform
+
+- RBAC with scoped cluster access
