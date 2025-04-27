@@ -1,8 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
-import { createUser, getUsers } from "./controllers/userController";
-
+import protectedRoutes from "./routes/protectedRoutes";
 dotenv.config();
 
 const app = express();
@@ -17,14 +16,7 @@ app.use(
   })
 );
 
-app.post("/api/users", createUser);
-app.get("/api/users", getUsers);
-
-app.get("/api/health", (_req, res) => {
-  console.log("hello");
-
-  res.json({ status: "ok", message: "Backend is alive!" });
-});
+app.use("/api", protectedRoutes);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running at http://localhost:${PORT}`);
